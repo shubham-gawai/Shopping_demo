@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <h1 class="heading" href="#">Online Store</h1>
+    <form class="searchbar">
+      <input class="searchbox" type="search" placeholder="Search" aria-label="Search">
+      <button class="searchbtn" type="submit">Search</button>
+    </form>
+    </div>
+  </nav>
+  <div class="navbar2">
+    <a>about us</a>
+    <a>contact us</a>
+  </div>
+
+  <div class="middivs">
+    <div class="category">
+      <h4>shop by category</h4>
+      <a>laptops</a>
+      <a>desktops</a>
+      <a>cameras</a>
+      <div class="form">
+        <input placeholder=" Image URL">
+        <input placeholder=" Product Name">
+        <textarea id="w3review" name="w3review" rows="4" cols="50">Product Description</textarea>
+        <input placeholder=" Price">
+        <button>submit</button>
+      </div>
+    </div>
+    <div class="cartitem" id="cartitem">
+
+      <div class="itemview">
+        <h4>Product List</h4>
+
+
+        <div id="btnContainer">
+          <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button>
+          <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="row">
+        <div class="productcart">
+          <div class="img">
+            <img src="download.jpg" alt="Girl in a jacket" width="80" height="90">
+          </div>
+          <div class="Description">
+            <h5>camera</h5>
+            <p>Lorem Ipsum is simply dummy text. </p>
+            <p>price : 30000</p>
+            <button onclick="myFunction()">view details</button>
+          </div>
+        </div>
+        <div class="productcart">
+          <div class="img">
+            <img src="download.jpg" alt="Girl in a jacket" width="80" height="90">
+          </div>
+          <div class="Description">
+            <h5>camera</h5>
+            <p>Lorem Ipsum is simply dummy text. </p>
+            <p>price : 30000</p>
+            <button onclick="myFunction()">view details</button>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <di+v class="row">
+        <div class="productcart">
+          <div class="img">
+            <img src="download.jpg" alt="Girl in a jacket" width="80" height="90">
+          </div>
+          <div class="Description">
+            <h5>camera</h5>
+            <p>Lorem Ipsum is simply dummy text. </p>
+            <p>price : 30000</p>
+            <button onclick="myFunction()">view details</button>
+          </div>
+        </div>
+        <div class="productcart">
+          <div class="img">
+            <img src="download.jpg" alt="Girl in a jacket" width="80" height="90">
+          </div>
+          <div class="Description">
+            <h5>camera</h5>
+            <p>Lorem Ipsum is simply dummy text. </p>
+            <p>price : 30000</p>
+            <button onclick="myFunction()">view details</button>
+          </div>
+        </div>
+
+        <hr>
+    </div>
+
+    <div class="yourcart">
+      <h4>Your Cart</h4>
+      <div class="value">
+        <span>3 items - $297.00</span>
+        <p>
+          <button id="view_cart" onclick=view()>view cart</button>
+          <button>Checkout</button>
+        </p>
+
+      </div>
+    </div>
+
+
+<!-- popup card -->
+    <div id="popup" class="popup-card">
+      <p id="itemName">Camera</p>
+      <hr>
+      <div class="_details">
+        <div id="item_image">
+          <img src="download.jpg" alt="product_image">
+        </div>
+
+        <div id="item_spec">
+          <div id="color">
+            <span><b>Color</b></span><br>
+            <select id="colorSelect">
+              <option value="">Select</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="pink">Pink</option>
+            </select>
+          </div><br>
+
+          <div id="qty">
+            <span><b>Qty</b></span><br>
+            <input type="number" id="quantity">
+          </div><br>
+
+          <div id="price">
+            <span><b>Price</b></span><br>
+            $<b id="itemPrice">230</b>
+          </div><br>
+        </div>
+      </div><br>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi molestiae in eaque corrupti molestias iusto architecto odit explicabo! Quae iusto optio tempore totam eveniet impedit assumenda fugiat velit distinctio ab.
+      Consequatur eius dolorum rerum
+      <hr>
+      
+      <div class="buttons">
+        <button id="close" onclick="hidePopup()">Close</button>
+        <button id="addToCart" onclick="addItem()">Add to Cart</button>
+      </div>
+    </div>
+  
+    <div id="overlay" class="overlay" onclick="hidePopup()"></div>
+
+  </div>
+  </div>
+  </div>
+
+<!-- shopping cart  -->
+
+          <div class="shopping_cart shopping_cart1" id="shopping_cart">
+            <div class="input-group" id="input-group">
+              <li><img src="download.jpg" alt="product_img" height="46px"; width="42px"> </li>
+              <li><h4 id="product_name">Camera</h4></li>
+              <li><button onclick="decrementValue()">-</button></li>
+              <li><input type="number" id="quantity" value="1" min="0"></li>
+              <li><button onclick="incrementValue()">+</button></li>
+              <li><p>$<b id="price_">99</b></p></li>
+              <li id="remover" onclick="remove()"><p><b>X</b></p></li>
+            </div>
+
+            <!-- <div class="shopping_cart">
+              <div class="input-group">
+                <li><img src="download.jpg" alt="product_img" height="46px"; width="42px"> </li>
+                <li><h4 id="product_name">Camera</h4></li>
+                <li><button onclick="decrementValue()">-</button></li>
+                <li><input type="number" id="quantity" value="1" min="0"></li>
+                <li><button onclick="incrementValue()">+</button></li>
+                <li><p>$<b id="price_">99</b></p></li>
+                <li id="remover" onclick="remove()"><p><b>X</b></p></li>
+              </div>
+              <div class="shopping_cart">
+                <div class="input-group">
+                  <li><img src="download.jpg" alt="product_img" height="46px"; width="42px"> </li>
+                  <li><h4 id="product_name">Camera</h4></li>
+                  <li><button onclick="decrementValue()">-</button></li>
+                  <li><input type="number" id="quantity" value="1" min="0"></li>
+                  <li><button onclick="incrementValue()">+</button></li>
+                  <li><p>$<b id="price_">99</b></p></li>
+                  <li id="remover" onclick="remove()"><p><b>X</b></p></li>
+                </div> -->
+            
+
+            <!-- <div class="remover_item">Remove Item</div> -->
+          </div>
+
+  <!-- <button onclick="showdiv()">button</button> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <script src="cart.js"></script>
+</body>
+
+</html>
